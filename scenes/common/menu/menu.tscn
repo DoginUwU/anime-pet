@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl1486t2q07n6"]
+
+[ext_resource type="Script" path="res://scenes/common/menu/Menu.cs" id="1_s356m"]
+[ext_resource type="Script" path="res://scenes/common/menu/MenuButton.cs" id="2_rqa82"]
+[ext_resource type="PackedScene" uid="uid://5te3wudmg7uh" path="res://scenes/common/menu/progress_input.tscn" id="3_8wada"]
+
+[sub_resource type="Theme" id="Theme_snt1h"]
+
+[node name="Menu" type="Window" node_paths=PackedStringArray("menuContainer")]
+transparent_bg = true
+size = Vector2i(650, 200)
+borderless = true
+always_on_top = true
+transparent = true
+theme = SubResource("Theme_snt1h")
+script = ExtResource("1_s356m")
+menuContainer = NodePath("Control/MarginContainer/MenuContainer")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="MenuContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 28
+
+[node name="Random Move" type="Button" parent="Control/MarginContainer/MenuContainer/HBoxContainer" node_paths=PackedStringArray("menu")]
+layout_mode = 2
+text = "Random Move"
+script = ExtResource("2_rqa82")
+menu = NodePath("../../../../..")
+callName = "CallRandomMove"
+
+[node name="Take Damage" type="Button" parent="Control/MarginContainer/MenuContainer/HBoxContainer" node_paths=PackedStringArray("menu")]
+layout_mode = 2
+text = "Take Damage"
+script = ExtResource("2_rqa82")
+menu = NodePath("../../../../..")
+callName = "CallTakeDamage"
+
+[node name="Button4" type="Button" parent="Control/MarginContainer/MenuContainer/HBoxContainer"]
+layout_mode = 2
+text = "{TEST}"
+
+[node name="Button5" type="Button" parent="Control/MarginContainer/MenuContainer/HBoxContainer"]
+layout_mode = 2
+text = "{TEST}"
+
+[node name="Button6" type="Button" parent="Control/MarginContainer/MenuContainer/HBoxContainer"]
+layout_mode = 2
+text = "{TEST}"
+
+[node name="ProgressInput" parent="Control/MarginContainer/MenuContainer" instance=ExtResource("3_8wada")]
+visible = false
+layout_mode = 2

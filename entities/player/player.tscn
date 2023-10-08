@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn4cqvy0c7c3n"]
+
+[ext_resource type="Texture2D" uid="uid://brcyrf0u57p0g" path="res://entities/player/assets/up_player.png" id="1_t1p8q"]
+[ext_resource type="Script" path="res://entities/player/Player.cs" id="2_o5co6"]
+
+[node name="Player" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(65, 65)
+scale = Vector2(2.03125, 2.03125)
+texture = ExtResource("1_t1p8q")
+script = ExtResource("2_o5co6")

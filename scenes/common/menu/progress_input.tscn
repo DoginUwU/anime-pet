@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://5te3wudmg7uh"]
+
+[node name="ProgressInput" type="HBoxContainer"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Vida
+"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 50.0
